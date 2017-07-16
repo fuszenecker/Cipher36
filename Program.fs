@@ -45,7 +45,7 @@ module main =
             for i = 0 to numberOfChars - 1 do
                 if i % 5 = 0 then printf " "
                 if i % 25 = 0 then printf "\n"
-                if i % 125 = 0 then printf "\n-----\nP%04d\n-----\n" (i / 125 + 1)
+                if i % 125 = 0 then printf "\n----\nP%03d\n----\n" (i / 125)
 
                 let (superNumber', character) = bigint.DivRem (superNumber, 36I)
                 superNumber <- superNumber'
