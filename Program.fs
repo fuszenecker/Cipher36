@@ -7,6 +7,8 @@ module main =
 
     [<EntryPoint>]
     let main args =
+        let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
         try
             if Array.length args < 2
                 then failwith "Usage: Cipher36 initValue numberofChars"
@@ -17,25 +19,43 @@ module main =
             if not success then
                 failwithf "Wrong number format of %A" args.[1]
 
-            let state = GLFSR.initialize initValue
+            let mutable state = GLFSR.initialize initValue
 
             printfn "Cipher36 is initialized as %A" state
+            printf "Generating %d characters" numberOfChars
+
+            let numberofBits = ((36I ** numberOfChars).ToByteArray().Length) * 8
 
             let mutable state' = state
-
-            printfn "Stepped into state %d --> %A" 0 state'
-
             let mutable ones = 0
             let mutable zeroes = 0
+            let mutable superNumber = bigint.Zero
 
-            for i = 1 to numberOfChars do
-                state' <- GLFSR.stepAndShrink state'
-                printfn "Stepped into state %d --> %A" i state'
+            for i = 0 to numberofBits do
+                state <- GLFSR.stepAndShrink state
+                superNumber <- superNumber * 2I
 
-                if state'.bit then ones <- ones + 1 else zeroes <- zeroes + 1
-                
-            printfn "Ones: %d, zeroes: %d" ones zeroes
+                if state.bit
+                then
+                    superNumber <- superNumber + 1I
+                    ones <- ones + 1
+                else
+                    zeroes <- zeroes + 1  
+
+            for i = 0 to numberOfChars - 1 do
+                if i % 5 = 0 then printf " "
+                if i % 25 = 0 then printf "\n"
+                if i % 125 = 0 then printf "\n-----\nP%04d\n-----\n" (i / 125 + 1)
+
+                let (superNumber', character) = bigint.DivRem (superNumber, 36I)
+                superNumber <- superNumber'
+
+                let char = characters.[int character]
+
+                printf "%c" char
+
+            printfn "\n\nOnes: %d, zeroes: %d" ones zeroes
             0
-        with 
+        with
         | exn as x -> printfn "Exception caught: %s" x.Message
                       0
