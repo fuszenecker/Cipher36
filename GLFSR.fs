@@ -8,7 +8,7 @@ module GLFSR =
 
     // 4 ==> [4, 3] --> [4, *(4 - N)] --> 
     //       [4, 1, 0] --> 0x1_0011
-
+    
     // let upperBit =
     //     2I ** 4
     
@@ -20,28 +20,28 @@ module GLFSR =
     // 8 ==> [8, 6, 5, 4] --> [8, *(8 - N)] --> 
     //       [8, 4, 3, 2, 0] --> 0x1_0001_1101 --> 0x11D (OK)
     
-    let upperBit =
-        2I ** 8
+    // let upperBit =
+    //     2I ** 8
 
-    let reducerPolinomial = 
-        2I ** (8 - 8) + 
-        2I ** (8 - 6) + 
-        2I ** (8 - 5) +
-        2I ** (8 - 4) +
-        upperBit
+    // let reducerPolinomial = 
+    //     2I ** (8 - 8) + 
+    //     2I ** (8 - 6) + 
+    //     2I ** (8 - 5) +
+    //     2I ** (8 - 4) +
+    //     upperBit
 
     // 4096 ==> 4096, 4095, 4081, 4069, 0 = 4096, *(4096 - N) =
     //      4096, 27, 15, 1, 0
 
-    // let upperBit =
-    //     2I ** 4096
+    let upperBit =
+        2I ** 4096
 
-    // let reducerPolinomial = 
-    //     2I ** (4096 - 4096) + 
-    //     2I ** (4096 - 4095) + 
-    //     2I ** (4096 - 4081) +
-    //     2I ** (4096 - 4069) +
-    //     upperBit
+    let reducerPolinomial = 
+        2I ** (4096 - 4096) + 
+        2I ** (4096 - 4095) + 
+        2I ** (4096 - 4081) +
+        2I ** (4096 - 4069) +
+        upperBit
 
     let reducerByteArray = reducerPolinomial.ToByteArray ()
 
@@ -72,3 +72,13 @@ module GLFSR =
             let result = new bigint(stateByteArray)
 
             { state = result; bit = not result.IsEven }
+
+    let rec stepAndShrink state =
+        let state' = step state
+        let state'' = step state'
+
+        if state'.bit
+        then
+            state'' 
+        else
+            stepAndShrink state''

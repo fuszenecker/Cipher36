@@ -25,10 +25,16 @@ module main =
 
             printfn "Stepped into state %d --> %A" 0 state'
 
+            let mutable ones = 0
+            let mutable zeroes = 0
+
             for i = 1 to numberOfChars do
-                state' <- GLFSR.step state'
+                state' <- GLFSR.stepAndShrink state'
                 printfn "Stepped into state %d --> %A" i state'
 
+                if state'.bit then ones <- ones + 1 else zeroes <- zeroes + 1
+                
+            printfn "Ones: %d, zeroes: %d" ones zeroes
             0
         with 
         | exn as x -> printfn "Exception caught: %s" x.Message
