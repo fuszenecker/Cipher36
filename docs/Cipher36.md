@@ -45,8 +45,8 @@ Z | Z Y X W V U T S R Q P O N M L K J I H G F E D C B A 9 8 7 6 5 4 3 2 1 0
 9 | 9 8 7 6 5 4 3 2 1 0 Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
 ```
 
-Quomodo tabula recta utamur
----------------------------
+Quomodo tabulam rectam utamur
+-----------------------------
 
 Opta litteram (aut numerum) clavis in columna sinisteriore, tum litteram aut
 numerum nuntii celandi in versu capite, itaque elementum optatum a columna et
