@@ -4,6 +4,7 @@ Cipher36
 Tabula recta
 ------------
 
+```text
   | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9
 --+------------------------------------------------------------------------
 A | A 9 8 7 6 5 4 3 2 1 0 Z Y X W V U T S R Q P O N M L K J I H G F E D C B
@@ -42,6 +43,7 @@ Z | Z Y X W V U T S R Q P O N M L K J I H G F E D C B A 9 8 7 6 5 4 3 2 1 0
 7 | 7 6 5 4 3 2 1 0 Z Y X W V U T S R Q P O N M L K J I H G F E D C B A 9 8
 8 | 8 7 6 5 4 3 2 1 0 Z Y X W V U T S R Q P O N M L K J I H G F E D C B A 9
 9 | 9 8 7 6 5 4 3 2 1 0 Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+```
 
 Quomodo tabula recta usa est
 ----------------------------
