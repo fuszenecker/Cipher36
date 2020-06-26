@@ -45,33 +45,33 @@ Z | Z Y X W V U T S R Q P O N M L K J I H G F E D C B A 9 8 7 6 5 4 3 2 1 0
 9 | 9 8 7 6 5 4 3 2 1 0 Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
 ```
 
-Quomodo tabulam rectam utamur
------------------------------
+Quomodo tabula recta utamur
+---------------------------
 
 Opta litteram (aut numerum) clavis in columna sinisteriore, tum litteram aut
-numerum nuntii celandi in versu capite, itaque elementum optatum a columna et
-versum nuntium celatum est.
+numerum nuntii occultandi in versu capite, itaque elementum occultatum a columna et
+versum nuntium monstratum est.
 
-Ad revertendum celandi, utere methodum ut supra, sed littera nuntii celandi et
-littera nuntii celati commutatae sint.
+Ad occultatum revertendum, utere methodo ut supra, sed littera nuntii celandi et
+littera nuntii occultandi commutentur.
 
-Quomodo numeri celantur
+Quomodo numeris utuntur
 -----------------------
 
-Numeri soli celati sunt, ut:
+Numeri soli occultentur, ut:
 
 - **0** substituit *.*
 - **1** substituit *,*
 - **2** substituit *?*
 - **3** substituit *!*
 - **4** substituit *=* *:* *est* *sunt*
-- **5** si praesens, initium nuntii indicat
+- **5** si praesens, initium vel finis nuntii indicat
 - **6** prefix nomenclatorum cum una littera est, ex. *6X*
 - **7** prefix nomenclatorum cum duabus litteris est, ex. *7XY*
 - **8** prefix nomenclatorum cum tribus litteris est, ex. *8XYZ*
 - **9** prefix nomenclatorum cum quattuor litteris est, ex. *9ABCD*
 
-Numeri itaque celati sunt:
+Numeri itaque occultentur:
 
 - **0** ut *00*, **1** ut *01*, **2** ut *02*, ... **9** ut *09*
 - **10** ut *10*, **11** ut *11*, ... **100** ut *100*, ...
